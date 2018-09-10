@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/middleware-center.svg)](https://www.npmjs.com/package/middleware-center)
 ![travis ci](https://travis-ci.org/CatchZeng/middleware-center.svg?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/CatchZeng/middleware-center/badge.svg?branch=master)](https://coveralls.io/github/CatchZeng/middleware-center?branch=master)
 
 middleware center for JavaScript, just like [koa](https://koajs.com) middleware.
 
