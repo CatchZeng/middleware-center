@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - stable
 script: npm run test
-after_script: npm run cover && cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
+after_script: npm run cov && cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
 env:
   global:
     secure: q9l1twNAPD8Iim6imT9JmdgK3QDCCd/u/u9jvoRICPX/1eVMlAGEAXFXnGq1JnE7PFw08I5BP8pemFN2e3PLs85PkuO08KIe2mVh2tH2sPnhqf6qB66/CG6K+812IBYHf+4paD/jnbAG6XOujkHQAhSmVBcYLClIAg5YQCzgzWj2bf4jhKWGg/7TsEqGJbnGYQdlzsTQxdhuFjM3VvtdEtvck/4QBwFXv0Oy9ry0TSgEgf2Wm08PLOZH2bzGtFT3DCBCOKfkmEj+pk5CpZ9LItCjho50gyojTFOcRrhXxECyhj6cNsaJ77bXiHJxoVxwY1+7df/0ruu9qzxch4xPoM9PNlbvPLT3E6xLMUmt1qG7s2JX6EtdRLUGbop1nvLm4OcEAiyWJFUnqW/appaq08WnYGlk8an0sVFqjIW/g/jkuBTlGqH7y+p1VONG5sr20FDkuhta+u779arfbr0m0XrDR/FVtGKp0Dq412sohQFsiTNGuC8uCIOMlMT5UoWVgNe5Vc66i9UA2KhPsi0VsiAAJwtbbq8xLloS9N+oqQ8XATv+3GUtzK1gZJ04wH++CvkJ60qUdT/0zH4DvErwtlbVafcCX4WJccbrYzYcnz9Az5lou6VOr4M+lEBukO20Ipc06Xe1Yo9c87+JQrqS5lOyXcr11gdLHj8uj4JCGmI=
