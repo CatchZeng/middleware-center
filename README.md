@@ -1,8 +1,7 @@
 ## middleware-center
 
 [![NPM version](https://img.shields.io/npm/v/middleware-center.svg)](https://www.npmjs.com/package/middleware-center)
-
-[![travis ci](https://travis-ci.org/CatchZeng/middleware-center.svg?branch=master)
+![travis ci](https://travis-ci.org/CatchZeng/middleware-center.svg?branch=master)
 
 
 middleware center for JavaScript, just like [koa](https://koajs.com) middleware.
