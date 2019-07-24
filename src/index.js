@@ -1,23 +1,26 @@
-import compose from "./compose"
+const compose = require("./compose")
 
-export default class MiddlewareCenter {
-    constructor() {
-        this._middlewares = []
-        this._context = null
-    }
+class MiddlewareCenter {
+  constructor() {
+    this._middlewares = []
+    this._context = null
+  }
 
-    use(middleware) {
-        if (typeof middleware != 'function') {
-            console.warn('middleware must be a function.')
-            return null
-        }
-        this._middlewares.push(middleware)
-        return this
+  use(middleware) {
+    if (typeof middleware != "function") {
+      console.warn("middleware must be a function.")
+      return null
     }
+    this._middlewares.push(middleware)
+    return this
+  }
 
-    handleRequest(context) {
-        const fn = compose(this._middlewares)
-        this._context = context
-        fn(this._context)
-    }
+  handleRequest(context) {
+    const fn = compose(this._middlewares)
+    this._context = context
+    return fn(this._context)
+  }
 }
+
+module.exports = MiddlewareCenter
+module.exports.default = MiddlewareCenter
