@@ -1,10 +1,10 @@
-## middleware-center
+# middleware-center
 
 [![NPM version](https://img.shields.io/npm/v/middleware-center.svg)](https://www.npmjs.com/package/middleware-center)
 ![travis ci](https://travis-ci.org/CatchZeng/middleware-center.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/CatchZeng/middleware-center/badge.svg?branch=master)](https://coveralls.io/github/CatchZeng/middleware-center?branch=master)
 
-middleware center for JavaScript, just like [koa](https://koajs.com) middleware.
+> middleware center for JavaScript, just like [koa](https://koajs.com) middleware.
 
 ## Installation
 
@@ -19,9 +19,9 @@ npm i middleware-center
 ```javascript
 import MiddlewareCenter from "middleware-center"
 
-const submiter = new MiddlewareCenter()
+const middlewareCenter = new MiddlewareCenter()
 
-submiter.use(function validate(ctx, next) {
+middlewareCenter.use(function validate(ctx, next) {
     console.log('before validate', ctx);
     if (ctx.name === 'zhh' && ctx.passwd === '123') {
         next()
@@ -29,17 +29,17 @@ submiter.use(function validate(ctx, next) {
     }
 })
 
-submiter.use(function request(ctx, next) {
+middlewareCenter.use(function request(ctx, next) {
     console.log('before request', ctx);
     next()
     console.log('after request');
 })
 
-submiter.use(function success(ctx, next) {
+middlewareCenter.use(function success(ctx, next) {
     console.log('on success', ctx);
 })
 
-submiter.handleRequest({name: 'zhh', passwd: '123'})
+middlewareCenter.handleRequest({name: 'zhh', passwd: '123'})
 
 /* result
 before validate { name: 'zhh', passwd: '123' }
@@ -171,6 +171,14 @@ after finishUpload
 after startUplaod
 after beforeUpload
 */
+```
+
+### Handle Error
+
+```javascript
+middlewareCenter.handleRequest(ctx).catch(function(err){
+  console.log(err.message)
+})
 ```
 
 ## API
