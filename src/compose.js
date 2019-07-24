@@ -1,4 +1,4 @@
-function compose(middleware) {
+export function compose(middleware) {
   if (!Array.isArray(middleware))
     throw new TypeError("Middleware stack must be an array!")
 
@@ -34,5 +34,3 @@ function compose(middleware) {
     }
   }
 }
-
-module.exports = compose
